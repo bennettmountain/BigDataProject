@@ -61,12 +61,12 @@ highHeel = Image.open('high_heel.jpg')
 width, height = highHeel.size
 endPoints = [(395, 210), (250, 350)]
 numTries = 300
-
-
-#drawLines(endPoints,numTries)
-
-endPoints2 = [(400, 210), (255, 350)]
-#drawLines(endPoints2,numTries)
-
-createDiffs(numTries * 2)
+numIters = 10
+'''for i in range(numIters):
+	newEndPointXLeft = endPoints[0][0] + 1
+	newEndPointXRight = endPoints[1][0] + 1
+	newEndPoints = [(newEndPointXLeft, endPoints[0][1]), (newEndPointXRight,endPoints[1][1])]
+	drawLines(newEndPoints,numTries)
+'''
+createDiffs(numTries * numIters)
 
