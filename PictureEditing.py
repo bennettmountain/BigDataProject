@@ -51,14 +51,14 @@ def drawStrongLines(numIters, starting, length, width):
 		tiwidth,tiheight = tryi.size
 		draw = ImageDraw.Draw(tryi)
 		leftPtY -= 1
-		tryi_string = 'Newtry/' + 'try' + str(file2Index) + '.png'
+		tryi_string = 'Newtry/' + 'Newtry' + str(file2Index) + '.png'
 		
 		firstpoints = [(leftPtX, leftPtY), (endPtX, leftPtY)]
 		draw.line(firstpoints,fill = 'red')
 		for k in list(range(leftPtY, tiheight)):
 			for j in list(range(leftPtX,endPtX)):
 				point = [(j,k)]
-				#draw.point(point,fill='white')
+				draw.point(point,fill='white')
 
 		verticalendPtY = leftPtY + length
 		firstVertPoints = [(endPtX,leftPtY), (endPtX,verticalendPtY)]
@@ -71,7 +71,7 @@ def drawStrongLines(numIters, starting, length, width):
 		for k in list(range(verticalendPtY, tiheight)):
 			for j in list(range(endPtX,horEndPtX)):
 				point = [(j,k)]
-				#draw.point(point,fill='white')
+				draw.point(point,fill='white')
 
 		vertical2endPtY = verticalendPtY - length
 		secondVertPoints = [(horEndPtX, verticalendPtY),(horEndPtX,vertical2endPtY)]
@@ -82,8 +82,14 @@ def drawStrongLines(numIters, starting, length, width):
 		for k in list(range(vertical2endPtY, tiheight)):
 			for j in list(range(horEndPtX,tiwidth)):
 				point = [(j,k)]
-				#draw.point(point,fill='white')
+				draw.point(point,fill='white')
 
+		# for j in range(tiwidth) :
+		# 	for k in range(tiheight):
+		# 		point = [(j,k)]
+		# 		distance = (j - leftPtX)*(rightPtY - leftPtY) - (k - leftPtY)*(rightPtX - leftPtX)
+		# 		if distance < 0:
+		# 			draw.point(point,fill='white')
 
 		tryi.save(tryi_string)
 		file2Index += 1

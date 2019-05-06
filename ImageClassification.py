@@ -4,7 +4,7 @@ import keras
 from keras.preprocessing.image import ImageDataGenerator
 import keras
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten
+from keras.layers import Activation, Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
 import tensorflow as tf
@@ -19,14 +19,14 @@ import matplotlib.pyplot as plt
 
 # parameters for CNN								   
 batch_size = 32
-epochs = 50
+epochs = 25
 num_classes = 2
 
 # input image dimensions
 img_width, img_height = 150, 150
 
-num_train_samples = 2300
-num_test_samples = 700
+num_train_samples = 2430
+num_test_samples = 1419
 
 if K.image_data_format() == 'channels_first':
     input_shape = (3, img_width, img_height)
